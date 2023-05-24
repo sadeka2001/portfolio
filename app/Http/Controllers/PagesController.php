@@ -14,6 +14,7 @@ class PagesController extends Controller
     $main=main::first();
     $services=service::all();
     $abouts=About::first();
+    
     return view('pages.index',compact('main','services','abouts'));
    }
 

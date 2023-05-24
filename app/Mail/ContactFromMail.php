@@ -22,7 +22,7 @@ class ContactFromMail extends Mailable
         $this->contact_form=$contact_form;
     }
 
-    
+
     /**
      * Get the message envelope.
      */
@@ -40,6 +40,7 @@ class ContactFromMail extends Mailable
     {
         return new Content(
             markdown: 'contact.contact-form',
+            
         );
     }
 
