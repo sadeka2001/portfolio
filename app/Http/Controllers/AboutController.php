@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public function create(){
+        
         return view('Backend.About.create');
     }
 
