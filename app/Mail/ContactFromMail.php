@@ -22,7 +22,12 @@ class ContactFromMail extends Mailable
         $this->contact_form=$contact_form;
     }
 
-
+    public function build(){
+        return $this->view('email')
+        ->subject('new contact email')
+        ->from('sadeka200120@gmail.com','system')
+        ->with('contact_from',$this->contact_from);
+    }
     /**
      * Get the message envelope.
      */
@@ -40,7 +45,7 @@ class ContactFromMail extends Mailable
     {
         return new Content(
             markdown: 'contact.contact-form',
-            
+
         );
     }
 

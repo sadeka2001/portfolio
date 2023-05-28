@@ -70,7 +70,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                
+
                                 <a class="nav-link" href="{{ url('/about.create') }}">Create</a>
                                 <a class="nav-link" href="{{ url('/about.index') }}">List</a>
                             </nav>
@@ -101,10 +101,30 @@
                             </nav>
                         </div>
 
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
-                            Contact
+
+                        <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                            <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
+                  Skills
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ url('/skills.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('/skills.index') }}">List</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="" data-bs-toggle="collapse" data-bs-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts4">
+                            <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
+               Contact
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ url('/contact.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('/contact.index') }}">List</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">

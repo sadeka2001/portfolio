@@ -52,10 +52,12 @@
                 <h1 class="text-light"><a href="index.html">{{ $main->tittle }}</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.facebook.com/sadeka.akther.399" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.facebook.com/sadeka.akther.399" target="_blank" class="facebook"><i
+                            class="bx bxl-facebook"></i></a>
                     <a href="#" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
                     <a href="#" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="https://www.linkedin.com/in/sadeka-akther/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/sadeka-akther/" target="_blank" class="linkedin"><i
+                            class="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
@@ -95,12 +97,14 @@
 
                 <div class="section-title">
                     <h2>About</h2>
-                    <p>Laravel developer with 1 years of experience seeking a challenging position in a dynamic organization. Passionate about developing efficient, scalable, and secure web applications using Laravel framework..</p>
+                    <p>Laravel developer with 1 years of experience seeking a challenging position in a dynamic
+                        organization. Passionate about developing efficient, scalable, and secure web applications using
+                        Laravel framework..</p>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4" data-aos="fade-right">
-                        <img src="{{asset('assets/img/me.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('uploads/portfolio/me.jpg',$abouts->image) }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Web Developer</h3>
@@ -112,25 +116,33 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{$abouts->bd}}</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <span>{{$abouts->website}}</span>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong>
+                                        <span>{{ $abouts->bd }}</span>
                                     </li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{$abouts->phone}}</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{$abouts->city}}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
+                                        <span>{{ $abouts->website }}</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong>
+                                        <span>{{ $abouts->phone }}</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong>
+                                        <span>{{ $abouts->city }}</span>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{$abouts->age}}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
+                                        <span>{{ $abouts->age }}</span>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
-                                        <span>{{$abouts->degree}}</span>
+                                        <span>{{ $abouts->degree }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                                        <span>{{$abouts->email}}</span>
+                                        <span>{{ $abouts->email }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                        <span>{{$abouts->freelance}}</span>
+                                        <span>{{ $abouts->freelance }}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -211,22 +223,33 @@
 
                 <div class="section-title">
                     <h2>Skills</h2>
-                    <p>Laravel developer with 1 years of experience seeking a challenging position in a dynamic organization. Passionate about developing efficient, scalable, and secure web applications using Laravel framework.</p>
+                    <p>Laravel developer with 1 years of experience seeking a challenging position in a dynamic
+                        organization. Passionate about developing efficient, scalable, and secure web applications using
+                        Laravel framework.</p>
                 </div>
 
                 <div class="row skills-content">
+                    @if ($skills)
+                        @foreach ($skills as $skills)
+                            <div class="col-lg-6" data-aos="fade-up">
+                                <div class="progress">
+                                    <span class="skill">
+                                        {{ $skills->tittle }}
 
-                    <div class="col-lg-6" data-aos="fade-up">
+                                        <i class="val"></i>
+                                    </span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar"
+                                            aria-valuenow="{{ $skills->score }}"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                        @endforeach
+                    @endif
 
-                        <div class="progress">
-                            <span class="skill">HTML <i class="val">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
 
-                        <div class="progress">
+
+                    {{-- <div class="progress">
                             <span class="skill">CSS <i class="val">60%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
@@ -268,11 +291,11 @@
                                 <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
                                     aria-valuemax="100"></div>
                             </div>
-                        </div>
-
-                    </div>
+                        </div> --}}
 
                 </div>
+
+            </div>
 
             </div>
         </section><!-- End Skills Section -->
@@ -293,7 +316,9 @@
                         <h3 class="resume-title">Sumary</h3>
                         <div class="resume-item pb-0">
                             <h4>Sadeka Akther</h4>
-                            <p><em>Laravel developer with 1 years of experience seeking a challenging position in a dynamic organization. Passionate about developing efficient, scalable, and secure web applications using Laravel framework.</em></p>
+                            <p><em>Laravel developer with 1 years of experience seeking a challenging position in a
+                                    dynamic organization. Passionate about developing efficient, scalable, and secure
+                                    web applications using Laravel framework.</em></p>
                             <ul>
                                 <li>Panthopath,Dhaka</li>
                                 <li>01880328167</li>
@@ -476,7 +501,8 @@
 
                 <div class="section-title">
                     <h2>Services</h2>
-                    <p>Developed custom web applications using Laravel framework, delivering projects within specified timeframes.Designed and implemented database schemas and data models.</p>
+                    <p>Developed custom web applications using Laravel framework, delivering projects within specified
+                        timeframes.Designed and implemented database schemas and data models.</p>
                 </div>
                 <div class="row">
                     @if (count($services) > 0)
@@ -627,14 +653,18 @@
                                 <p>01880328167</p>
                             </div>
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14606.153902721158!2d90.3880834!3d23.763832049999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a093137aa5%3A0x25dc5b609e8d437c!2sDhaka%201215!5e0!3m2!1sen!2sbd!4v1684843261167!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14606.153902721158!2d90.3880834!3d23.763832049999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a093137aa5%3A0x25dc5b609e8d437c!2sDhaka%201215!5e0!3m2!1sen!2sbd!4v1684843261167!5m2!1sen!2sbd"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="{{ url('/contact.store') }}" method="post" role="form" class="php-email-form">
-                           @csrf
+                        <form action="{{url('/contact.store') }}" method="post" role="form"
+                            class="php-email-form">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Your Name</label>
