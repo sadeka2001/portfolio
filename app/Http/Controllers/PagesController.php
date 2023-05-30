@@ -15,9 +15,10 @@ class PagesController extends Controller
    public function index(){
     $main=main::first();
     $services=service::all();
-    $abouts=About::first();
+    $about=About::first();
+    $portfolio=Portfolio::all();
     $skills=Skills::all();
-    return view('pages.index',compact('main','services','abouts','skills'));
+    return view('pages.index',compact('main','services','about','skills','portfolio'));
    }
 
    public function admin(){
@@ -27,9 +28,9 @@ class PagesController extends Controller
 public function detail(){
     $main=main::first();
     $services=service::all();
-    $abouts=About::first();
+    $about=About::first();
     $portfolio=Portfolio::first();
     $skills=Skills::all();
-    return view('pages.portfolio_details',compact('main','services','abouts','portfolio','skills'));
+    return view('pages.portfolio_details',compact('main','services','about','portfolio','skills'));
 }
 }

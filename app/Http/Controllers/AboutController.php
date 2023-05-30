@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public function create(){
-        
+
         return view('Backend.About.create');
     }
 
     public function index(){
-        $abouts=About::all();
-        return view('Backend.About.list',compact('abouts'));
+        $about=About::all();
+        return view('Backend.About.list',compact('about'));
     }
 
     public function store(Request $request){

@@ -67,7 +67,7 @@
                          <div class="form-group col-md-3 mt-3">
                             <h4>image</h4>
                             <div class="form-group col-md-4 mt-3">
-                                <img style="height:30vh" src="" alt="">
+                                <img src="{{asset('uploads/portfolio')}}" style="height:30vh"  alt="">
                                 <input class="mt-3" type="file" id="image" name="image">
                             </div>
                         </div>

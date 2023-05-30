@@ -46,6 +46,7 @@
         </ul>
     </nav>
     <div id="layoutSidenav">
+
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
@@ -129,13 +130,13 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                  Dashboard Template
                 </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             @include('alert.msg')
-            @yield('content')
+         @yield('content')
 
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">

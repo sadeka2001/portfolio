@@ -30,8 +30,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if (count($abouts) > 0)
-                                @foreach ($abouts as $about)
+                            @if (count($about) > 0)
+                                @foreach ($about as $about)
                                     <tr>
                                         <th scope="row">{{ $about->id }}</th>
                                         <td>{{ $about->bd }}</td>
@@ -42,7 +42,7 @@
                                         <td>{{ $about->degree }}</td>
                                         <td>{{ $about->email }}</td>
                                         <td>{{ $about->freelance }}</td>
-                                        <td>{{ $about->image }}</td>
+                                        <td><img src="{{url('asset/uploads/portfolio',$about->image)}}" style="height:30vh"></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-sm-2">

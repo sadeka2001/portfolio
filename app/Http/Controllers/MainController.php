@@ -31,8 +31,8 @@ class MainController extends Controller
 
         if ($request->file('bg_image')) {
             $image = $request->file('bg_image');
-            $image->storeAs('public/img/','me' .$image->getClientOrginalExtension());
-            $main->bg_image = 'storage/img/me.' .$image->getClientOrginalExtension();
+            $image->storeAs('public/img/','me' .$image->getClientOriginalExtension());
+            $main->bg_image = 'storage/img/me.' .$image->getClientOriginalExtension();
         }
         $main->save();
         return redirect('/main')->with('success', ",Main page Updated Successfully");

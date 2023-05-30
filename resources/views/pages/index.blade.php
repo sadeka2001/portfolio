@@ -104,7 +104,7 @@
 
                 <div class="row">
                     <div class="col-lg-4" data-aos="fade-right">
-                        <img src="{{ asset('uploads/portfolio/me.jpg',$abouts->image) }}" class="img-fluid" alt="">
+                        <img src="{{url($about->image)}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Web Developer</h3>
@@ -117,32 +117,32 @@
                             <div class="col-lg-6">
                                 <ul>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong>
-                                        <span>{{ $abouts->bd }}</span>
+                                        <span>{{ $about->bd }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <span>{{ $abouts->website }}</span>
+                                        <span>{{ $about->website }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong>
-                                        <span>{{ $abouts->phone }}</span>
+                                        <span>{{ $about->phone }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong>
-                                        <span>{{ $abouts->city }}</span>
+                                        <span>{{ $about->city }}</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                                        <span>{{ $abouts->age }}</span>
+                                        <span>{{ $about->age }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
-                                        <span>{{ $abouts->degree }}</span>
+                                        <span>{{ $about->degree }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                                        <span>{{ $abouts->email }}</span>
+                                        <span>{{ $about->email }}</span>
                                     </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                        <span>{{ $abouts->freelance }}</span>
+                                        <span>{{ $about->freelance }}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -229,18 +229,18 @@
                 </div>
 
                 <div class="row skills-content">
-                    @if ($skills)
+                    @if(count($skills)> 0)
                         @foreach ($skills as $skills)
                             <div class="col-lg-6" data-aos="fade-up">
                                 <div class="progress">
                                     <span class="skill">
                                         {{ $skills->tittle }}
 
-                                        <i class="val"></i>
+                                        <i class="val">{{ $skills->score }}</i>
                                     </span>
                                     <div class="progress-bar-wrap">
                                         <div class="progress-bar" role="progressbar"
-                                            aria-valuenow="{{ $skills->score }}"
+                                            aria-valuenow="60"
                                             aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
@@ -655,7 +655,7 @@
 
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14606.153902721158!2d90.3880834!3d23.763832049999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a093137aa5%3A0x25dc5b609e8d437c!2sDhaka%201215!5e0!3m2!1sen!2sbd!4v1684843261167!5m2!1sen!2sbd"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                width="470" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
@@ -687,7 +687,7 @@
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
-                                <div class="error-message"></div>
+                                {{-- <div class="error-message"></div> --}}
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
                             <div class="text-center"><button type="submit">Send Message</button></div>
