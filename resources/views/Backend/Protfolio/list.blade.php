@@ -37,8 +37,10 @@
                                         <td>{{ $portfolio->url }}</td>
                                         <td>{{ $portfolio->tittle }}</td>
                                         <td>{{ $portfolio->description }}</td>
-                                        <td>{{ $portfolio->bg_image }}</td>
-                                        <td>{{ $portfolio->sm_image }}</td>
+                                        <td> <img src="{{asset('uploads/portfolio_project/'.$portfolio->bg_image)}}" style="height:100px"></td>
+
+
+                                        <td><img src="{{asset('uploads/portfolio_project/'.$portfolio->sm_image)}}" style="height:100px"></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-sm-2">

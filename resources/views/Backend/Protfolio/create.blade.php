@@ -49,7 +49,7 @@
                          <div class="form-group col-md-3 mt-3">
                             <h4>Big image</h4>
                             <div class="form-group col-md-4 mt-3">
-                                <img style="height:30vh" src="" alt="">
+                                <img style="height:30px" src="{{ asset('uploads/portfolio_project') }}" alt="">
                                 <input class="mt-3" type="file" id="bg_image" name="bg_image">
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                         <div class="form-group col-md-3 mt-3">
                             <h4>small image</h4>
                             <div class="form-group col-md-4 mt-3">
-                                <img style="height:30vh" src="" alt="">
+                                <img style="height:30px" src="{{asset('uploads/portfolio_project')  }}" alt="">
                                 <input class="mt-3" type="file" id="sm_image" name="sm_image">
                             </div>
                         </div>

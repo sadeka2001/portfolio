@@ -14,7 +14,7 @@
                 <div class="form-group col-md-3 mt-3">
                     <h4>Background image</h4>
                     <div class="form-group col-md-4 mt-3">
-                        <img style="height:30vh" src="{{$main->bg_image}}" alt="">
+                        <img style="height:30vh" src="{{url($main->bg_image)}}" alt="">
                         <input class="mt-3" type="file" id="bg_image" name="bg_image">
                     </div>
                 </div>

@@ -31,7 +31,32 @@ class ContactController extends Controller
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         $contact->save();
-        return redirect('/contact.create')->with('success', 'Contact created successfully');
+
+        $data = array('name' => $request->name, 'email' => $request->email, 'subject' => $request->subject, 'msg' => $request->message); // user er name & email, message
+
+        Mail::send('mail', $data, function ($message) {
+            $message->to('sadeka200120@gmail.com')->subject('Mail from Portfolio');
+            $message->from('likhon.own@gmail.com'); // settings er email
+        });
+        // echo "Your Email Sent!";
+        return "email Send";
+        // return redirect('/contact.create')->with('success', 'Contact created successfully');
+    }
+
+    public function html_email(Request $request)
+    {
+        // $student = new student;
+        // $student->name = $request->name;
+        // $student->roll = $request->roll;
+        // $student->save();
+
+        $data = array('name' => $request->name, 'email' => $request->email, 'subject' => $request->subject); // user er name & email, message
+
+        Mail::send('mail', $data, function ($message) {
+            $message->to('sadeka200120@gmail.com')->subject('Mail from Portfolio');
+            $message->from('likhon.own@gmail.com'); // settings er email
+        });
+        echo "Your Email Sent!";
     }
 
 

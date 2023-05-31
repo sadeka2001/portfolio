@@ -13,6 +13,10 @@
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
+    {{-- Font awsome --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="icon">
+
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -104,14 +108,13 @@
 
                 <div class="row">
                     <div class="col-lg-4" data-aos="fade-right">
-                        <img src="{{url($about->image)}}" class="img-fluid" alt="">
+                        <img src="{{ url('uploads/portfolio/' . $about->image) }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Web Developer</h3>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                            Laravel developer with 1 years of experience seeking a challenging position in a dynamic
+                            organization.
                         </p>
                         <div class="row">
                             <div class="col-lg-6">
@@ -147,12 +150,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <p>
-                            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt
-                            adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-                            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus
-                            itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis
-                            culpa magni laudantium dolores.
+                        <p>Laravel developer with 1 years of experience seeking a challenging position in a
+                            dynamic organization. Passionate about developing efficient, scalable, and secure
+                            web applications using Laravel framework.
                         </p>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                 </div>
 
                 <div class="row skills-content">
-                    @if(count($skills)> 0)
+                    @if (count($skills) > 0)
                         @foreach ($skills as $skills)
                             <div class="col-lg-6" data-aos="fade-up">
                                 <div class="progress">
@@ -240,10 +240,12 @@
                                     </span>
                                     <div class="progress-bar-wrap">
                                         <div class="progress-bar" role="progressbar"
-                                            aria-valuenow="60"
-                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                            aria-valuenow="{{ $skills->score }}" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
                         @endforeach
                     @endif
 
@@ -372,9 +374,9 @@
 
                 <div class="section-title">
                     <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Laravel developer with 1 years of experience seeking a challenging position in a
+                        dynamic organization. Passionate about developing efficient, scalable, and secure
+                        web applications using Laravel framework.</p>
                 </div>
 
                 <div class="row" data-aos="fade-up">
@@ -389,20 +391,28 @@
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="{{ url('portfolio_details') }}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                    {{-- @if (count($portfolio) > 0) --}}
+                    @foreach ($portfolio as $portfolio)
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <div class="portfolio-wrap">
+                                <img src="{{ asset('uploads/portfolio_project/' . $portfolio->sm_image) }}"
+                                    class="img-fluid" alt="">
+                                <div class="portfolio-links">
+                                    <a href="{{ url('uploads/portfolio_project/' . $portfolio->sm_image) }}"
+                                        data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
+                                            class="bx bx-plus"></i>
+                                    </a>
+                                    <a href="{{ url('portfolio_details') }}" title="More Details"><i
+                                            class="bx bx-link"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+                    {{-- @endif --}}
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+
+                    {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                         <div class="portfolio-wrap">
                             <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-links">
@@ -488,7 +498,7 @@
                                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -508,7 +518,7 @@
                     @if (count($services) > 0)
                         @foreach ($services as $service)
                             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                                <div class="icon"><i class="<?php echo $service->icon; ?>bi bi-briefcase"></i></div>
+                                <div class="icon"><i class="{{ $service->icon }}"></i></div>
                                 <h4 class="title"><a href="">{{ $service->tittle }}</a></h4>
                                 <p class="description">{{ $service->description }}</p>
                             </div>
@@ -662,7 +672,7 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="{{url('/contact.store') }}" method="post" role="form"
+                        <form action="{{ url('/contact.store') }}" method="post" role="form"
                             class="php-email-form">
                             @csrf
                             <div class="row">
@@ -687,9 +697,10 @@
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
-                                {{-- <div class="error-message"></div> --}}
+                                <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
+                            {{-- <input class="text-center" type="submit" value="Send Message"> --}}
                             <div class="text-center"><button type="submit">Send Message</button></div>
                         </form>
                     </div>
@@ -733,6 +744,8 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </body>
 

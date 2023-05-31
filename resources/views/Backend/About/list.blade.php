@@ -42,7 +42,7 @@
                                         <td>{{ $about->degree }}</td>
                                         <td>{{ $about->email }}</td>
                                         <td>{{ $about->freelance }}</td>
-                                        <td><img src="{{url('asset/uploads/portfolio',$about->image)}}" style="height:30vh"></td>
+                                        <td><img src="{{asset('uploads/portfolio/'.$about->image)}}" style="height:30vh"></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-sm-2">

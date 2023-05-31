@@ -29,7 +29,7 @@ public function detail(){
     $main=main::first();
     $services=service::all();
     $about=About::first();
-    $portfolio=Portfolio::first();
+    $portfolio=Portfolio::all();
     $skills=Skills::all();
     return view('pages.portfolio_details',compact('main','services','about','portfolio','skills'));
 }
